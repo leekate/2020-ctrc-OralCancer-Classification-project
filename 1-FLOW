@@ -1,0 +1,116 @@
+# 1. 데이터 원본
+Cancer: 410
+Precancer: 150
+Inflammatory 265
+Normal: 1137
+TOTAL: 1962
+
+
+
+# 2. 데이터 증량
+cancer, precancer, inflammatory = 3회 (if i>2)
+normal = 2회 (if>1) 
+
+rescale=1./255,
+horizontal_flip=True,
+vertical_flip=True,
+rotation_range=40,
+width_shift_range=0.2,
+height_shift_range=0.2,
+zoom_range=0.2
+
+---->
+Cancer: 984
+Precancer: 360
+Inflammatory: 636
+Normal: 2058
+TOTAL: 2340
+
+
+
+# 3. train/validation/test
+cancer: 984/ 82/ 82
+precancer: 360/ 30/ 30
+Inflammatory: 636/ 53/ 53
+normal: 2058/ 2058/ 2058
+
+
+
+# 4. Resnet
+```
+filter_size1 = 7
+num_filters1 = 64
+
+filter_size2 = 1
+num_filters2 = 64
+
+filter_size3 = 3
+num_filters3 = 64
+
+filter_size4 = 1
+num_filters4 = 256
+
+filter_size5 = 1
+num_filters5 = 128
+
+filter_size6 = 3
+num_filters6 = 128
+
+filter_size7 = 1
+num_filters7 = 512
+
+filter_size8 = 1
+num_filters8 = 256
+
+filter_size9 = 3
+num_filters9 = 256
+
+filter_size10 = 1
+num_filters10 = 1024
+
+filter_size11 = 1
+num_filters11 = 512
+
+filter_size12 = 3
+num_filters12 = 512
+
+filter_size13 = 1
+num_filters13 = 2048
+
+# Fully-connected layer.
+# Number of neurons in fully-connected layer.
+# convolution layer 전체에 있는 뉴런 수 = 필터 역할
+# fc_size = 256             
+fc_size = 1000
+
+# Number of color channels for the images: 1 channel for gray-scale.
+num_channels = 3
+
+# image dimensions (only squares for now)
+img_size = 224
+
+batch_size=32
+```
+
+
+# 5. 1차 결과
+Epoch 4698 --- Training Accuracy: 100.0%,  Validation Loss: 3.103
+Validation Accuracy: 71.4% (280 / 392)
+
+Confusion Matrix:
+[[ 55   3   7  17]
+ [ 12   2   7   9]
+ [  7   7  15  24]
+ [  5   5   9 208]]
+ 
+ 1.Cancer의 정밀도 :  69.62025316455697 %
+1.Cancer의 재현율 :  67.07317073170732 %
+2.Precancer의 정밀도 :  11.76470588235294 %
+2.Precancer의 재현율 :  6.666666666666667 %
+3.Inflammatory의 정밀도 :  39.473684210526315 %
+3.Inflammatory의 재현율 :  28.30188679245283 %
+4.Normal의 정밀도 :  80.62015503875969 %
+4.Normal의 재현율 :  91.62995594713657 %
+None
+Test Accuracy: 68.4% (268 / 392)
+
