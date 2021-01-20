@@ -94,8 +94,6 @@ model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 
 
-
-
 model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
@@ -122,9 +120,6 @@ model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 
 
-
-
-
 model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
@@ -161,14 +156,6 @@ model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
-
-
-
-
-
-
-
-
 
 model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
@@ -184,8 +171,6 @@ model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
-
-
 
 
 model.add(Flatten()) 
@@ -197,6 +182,8 @@ model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 ```
+
+
 
 # 4-2. VGG16
 ```
@@ -252,8 +239,6 @@ model.add(layers.Dropout(0.25))
 model.add( MaxPooling2D((2,2), padding='same'))
 
 
-
-
 model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
@@ -262,9 +247,6 @@ model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
                                   (0.001),activation='relu'))
 model.add(layers.Dropout(0.25))
 model.add( MaxPooling2D((2,2), padding='same'))
-
-
-
 
 
 model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
@@ -288,7 +270,9 @@ model.add(layers.Dense(4,activation='relu'))
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
-              ```
+              
+```       
+
 
 
 
