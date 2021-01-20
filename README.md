@@ -8,9 +8,13 @@ edge를 검출해 병변 부위를 검출해 feature로 사용한다면 성능�
 
 # 1. 데이터 원본
 Cancer: 410
+
 Precancer: 150
+
 Inflammatory 265
+
 Normal: 1137
+
 TOTAL: 1962
 
 
@@ -19,29 +23,45 @@ TOTAL: 1962
 1) 증량 방법:
 증량 후 train: validation: test=약 1: 0.4: 0.4의 비율이 되도록
 
+
 2) 증량 조건:
 rescale=1./255,
+
 horizontal_flip=True,
+
 vertical_flip=True,
+
 rotation_range=40,
+
 width_shift_range=0.2,
+
 height_shift_range=0.2,
+
 zoom_range=0.2
 
 ---->
+
 Cancer: 782
+
 Precancer: 288
+
 Inflammatory: 502
+
 Normal: 2047
+
 TOTAL: 3619
 
 
 
 # 3. train/validation/test
 train: validation: test=약 1: 0.4: 0.4의 비율
+
 cancer: 496
+
 precancer: 184
+
 Inflammatory: 316
+
 normal: 1365
 
 
