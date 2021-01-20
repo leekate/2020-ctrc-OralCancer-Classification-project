@@ -29,78 +29,267 @@ height_shift_range=0.2,
 zoom_range=0.2
 
 ---->
-Cancer: 
-Precancer: 
-Inflammatory: 
-Normal: 
-TOTAL: 
+Cancer: 782
+Precancer: 288
+Inflammatory: 502
+Normal: 2047
+TOTAL: 3619
 
 
 
 # 3. train/validation/test
 train: validation: test=약 1: 0.4: 0.4의 비율
-cancer: 
-precancer: 
-Inflammatory: 
-normal: 
+cancer: 496
+precancer: 184
+Inflammatory: 316
+normal: 1365
 
 
 
-# 4. Resnet
+# 4-1. Resnet
 ```
-filter_size1 = 7
-num_filters1 = 64
 
-filter_size2 = 1
-num_filters2 = 64
+from tensorflow.keras.applications import ResNet50
 
-filter_size3 = 3
-num_filters3 = 64
+conv_base=ResNet50(weights='imagenet',
+                include_top=False,
+                input_shape=(150,150,3))
+                
+                
+from tensorflow.keras import layers
+from tensorflow.keras import models
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
+from tensorflow.keras import optimizers, initializers, regularizers, metrics
 
-filter_size4 = 1
-num_filters4 = 256
 
-filter_size5 = 1
-num_filters5 = 128
 
-filter_size6 = 3
-num_filters6 = 128
+model=models.Sequential()
+model.add(conv_base)
 
-filter_size7 = 1
-num_filters7 = 512
 
-filter_size8 = 1
-num_filters8 = 256
 
-filter_size9 = 3
-num_filters9 = 256
+model.add(layers.Dense(2048, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(2048, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add( MaxPooling2D((2,2), padding='same'))
 
-filter_size10 = 1
-num_filters10 = 1024
 
-filter_size11 = 1
-num_filters11 = 512
 
-filter_size12 = 3
-num_filters12 = 512
 
-filter_size13 = 1
-num_filters13 = 2048
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
 
-# Fully-connected layer.
-# Number of neurons in fully-connected layer.
-# convolution layer 전체에 있는 뉴런 수 = 필터 역할
-# fc_size = 256             
-fc_size = 1000
 
-# Number of color channels for the images: 1 channel for gray-scale.
-num_channels = 3
 
-# image dimensions (only squares for now)
-img_size = 224
 
-batch_size=32
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+
+
+
+
+
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+
+
+
+
+
+
+
+
+
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+
+
+
+
+model.add(Flatten()) 
+model.add(layers.Dense(64,activation='relu'))
+model.add(layers.Dense(4,activation='relu'))
+
+
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
 ```
+
+# 4-2. VGG16
+```
+from tensorflow.keras.applications import VGG16
+
+conv_base=VGG16(weights='imagenet',
+                include_top=False,
+                input_shape=(150,150,3))
+                
+                
+from tensorflow.keras import layers
+from tensorflow.keras import models
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
+from tensorflow.keras import optimizers, initializers, regularizers, metrics
+
+
+model=models.Sequential()
+model.add(conv_base)
+
+
+model.add(layers.Dense(2048, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(2048, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dropout(0.25))
+model.add( MaxPooling2D((2,2), padding='same'))
+
+
+
+#Layer weight regularizers    #kernel_regularizer: Regularizer to apply a penalty on the layer's kerne 
+#L1: float; L1 regularization factor = 0.001   
+#L1 regularization : 가중치의 절댓값에 비례하는 비용이 추가됨(가중치의 L1 norm)
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(1024, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dropout(0.25))
+model.add( MaxPooling2D((2,2), padding='same'))
+
+
+
+  
+#L2: float; L2 regularization factor = 0.001  
+#L2 regularization(=weight decay) : 가중치의 제곱에 비례하는 비용이 추가됨(가중치의 L2 norm)
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(512, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dropout(0.25))
+model.add( MaxPooling2D((2,2), padding='same'))
+
+
+
+
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(256, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dropout(0.25))
+model.add( MaxPooling2D((2,2), padding='same'))
+
+
+
+
+
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dense(128, kernel_regularizer = regularizers.l2
+                                  (0.001),activation='relu'))
+model.add(layers.Dropout(0.25))
+model.add( MaxPooling2D((2,2), padding='same'))
+
+
+
+model.add(Flatten()) 
+model.add(layers.Dense(64,activation='relu'))
+model.add(layers.Dense(64,activation='relu'))
+model.add(layers.Dense(4,activation='relu'))
+
+
+
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+              ```
+
 
 
 # 5. 2차 결과
