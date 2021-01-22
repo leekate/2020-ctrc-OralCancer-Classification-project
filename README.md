@@ -22,6 +22,10 @@ TOTAL: 1962
 
 
 
+
+
+
+
 # 2. 데이터 증량
 1) 증량 방법:
 증량 후 train: validation: test=약 1: 0.4: 0.4의 비율이 되도록
@@ -50,6 +54,10 @@ TOTAL: 3619
 
 
 
+
+
+
+
 # 3. train/validation/test
 train: validation: test=약 1: 0.4: 0.4의 비율
 
@@ -63,7 +71,15 @@ normal: 1365
 
 
 
+
+
+
+
 # 3-2. Histogram Equalization
+
+
+
+
 
 
 
@@ -75,7 +91,10 @@ normal: 1365
 <img width="551" alt="스크린샷 2021-01-22 오후 1 00 02" src="https://user-images.githubusercontent.com/46522501/105444736-c3ddec80-5cb1-11eb-8e67-6769d6e49170.png">
 
 ## 4-2. VGG16
-![vgg](https://user-images.githubusercontent.com/46522501/105444618-86795f00-5cb1-11eb-9066-9ded9b58c1fc.png)
+<img width="620" alt="스크린샷 2021-01-22 오후 2 05 03" src="https://user-images.githubusercontent.com/46522501/105449135-1374e600-5cbb-11eb-8402-031bba3acb5c.png">
+
+
+
 
 
 
@@ -85,6 +104,9 @@ normal: 1365
 ![image](https://user-images.githubusercontent.com/46522501/102291993-a5385780-3f87-11eb-957b-2086fdd33263.png)
 이미지의 밝기를 일정하게 통일하고,
 edge를 검출해 병변 부위를 검출해 feature로 사용한다면 성능이 좋아지지 않을까?
+
+
+
 
 
 
