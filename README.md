@@ -100,7 +100,12 @@ normal: 1365
 
 
 
-### 예상
+### 예상1
+<img width="1150" alt="스크린샷 2021-01-25 오후 5 02 39" src="https://user-images.githubusercontent.com/46522501/105677507-4b845f00-5f2f-11eb-9fb2-7b232b86b47a.png">
+Contrast로 데이터 전처리 해주고 학습을 한다면 특징이 부각되니까 더 성능이 좋아지지 않을까?
+
+
+### 예상2
 ![image](https://user-images.githubusercontent.com/46522501/102291993-a5385780-3f87-11eb-957b-2086fdd33263.png)
 이미지의 밝기를 일정하게 통일하고,
 edge를 검출해 병변 부위를 검출해 feature로 사용한다면 성능이 좋아지지 않을까?
