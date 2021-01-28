@@ -10,19 +10,7 @@
 
 
 # 1. 데이터 원본
-Cancer: 410
-
-Precancer: 150
-
-Inflammatory 265
-
-Normal: 1137
-
-TOTAL: 1962
-
-
-
-
+![원본](https://user-images.githubusercontent.com/46522501/106096465-f9cf1500-6178-11eb-8d94-f4befe72c3fd.PNG)
 
 
 
@@ -32,26 +20,16 @@ TOTAL: 1962
 
 
 2) 증량 조건:
-rescale=1./255,
+
+```rescale=1./255,
 horizontal_flip=True,
 vertical_flip=True,
 rotation_range=40,
 width_shift_range=0.2,
 height_shift_range=0.2,
-zoom_range=0.2
+zoom_range=0.2```
 
----->
-
-Cancer: 782
-
-Precancer: 288
-
-Inflammatory: 502
-
-Normal: 2047
-
-TOTAL: 3619
-
+![며흐둣샤ㅐㅜ](https://user-images.githubusercontent.com/46522501/106096948-cb9e0500-6179-11eb-8235-f22405886384.PNG)
 
 
 
@@ -61,15 +39,9 @@ TOTAL: 3619
 # 3. train/validation/test
 train: validation: test=약 1: 0.4: 0.4의 비율
 
-cancer: 496
+cancer: 496  /  precancer: 184  /  Inflammatory: 316  /  normal: 1365
 
-precancer: 184
-
-Inflammatory: 316
-
-normal: 1365
-
-
+![원본](https://user-images.githubusercontent.com/46522501/106096465-f9cf1500-6178-11eb-8d94-f4befe72c3fd.PNG)
 
 
 
