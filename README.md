@@ -21,17 +21,6 @@
 
 2) 증량 조건:
 
-```rescale=1./255,
-horizontal_flip=True,
-vertical_flip=True,
-rotation_range=40,
-width_shift_range=0.2,
-height_shift_range=0.2,
-zoom_range=0.2
-
-
-
-
 ![며흐둣샤ㅐㅜ](https://user-images.githubusercontent.com/46522501/106096948-cb9e0500-6179-11eb-8235-f22405886384.PNG)
 
 
