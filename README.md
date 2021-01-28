@@ -23,7 +23,7 @@
 
 ![며흐둣샤ㅐㅜ](https://user-images.githubusercontent.com/46522501/106096948-cb9e0500-6179-11eb-8235-f22405886384.PNG)
 
-
+방법(1) 일반증량:
 ```
 rescale=1./255,
 horizontal_flip=True,
@@ -33,6 +33,8 @@ width_shift_range=0.2,
 height_shift_range=0.2,
 zoom_range=0.2
 ```
+
+방법(2) 일반증량+Contrast:
 
 
 
