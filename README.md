@@ -80,6 +80,11 @@ cancer: 496  /  precancer: 184  /  Inflammatory: 316  /  normal: 1365
 <img width="1150" alt="스크린샷 2021-01-25 오후 5 02 39" src="https://user-images.githubusercontent.com/46522501/105677507-4b845f00-5f2f-11eb-9fb2-7b232b86b47a.png">
 Contrast로 데이터 전처리 해주고 학습을 한다면 특징이 부각되니까 더 성능이 좋아지지 않을까?
 
+predict 결과 아래와 같은 결과가 나왔다. 전반적으로 수치가 낮으며, 특히 Precancer의 수치가 낮은 것을 확인할 수 있다.
+![contrst](https://user-images.githubusercontent.com/46522501/106235507-28fb8a00-623e-11eb-8073-49d082fddf9c.PNG)
+ accuracy와  loss을 확인해보아도 학습이 미흡하다는 것을 알 수 있다.
+![contrast_result](https://user-images.githubusercontent.com/46522501/106235613-5d6f4600-623e-11eb-9bbd-38089340542e.png)
+
 
 ### 예상2
 ![image](https://user-images.githubusercontent.com/46522501/102291993-a5385780-3f87-11eb-957b-2086fdd33263.png)
